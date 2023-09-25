@@ -29,7 +29,9 @@ import CardDitals from "../Page/CardDitals/CardDitals";
     },
     {
         path:"/cardDtls/:id",
-        element:<CardDitals></CardDitals>
+        element:<CardDitals></CardDitals>,
+        loader:()=>fetch('/data.json')
+
     }
   
 

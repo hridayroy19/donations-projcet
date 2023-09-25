@@ -7,7 +7,9 @@ const MainLaout = () => {
         <div>
             <div className=" px-32 py-5"><Navbar></Navbar></div>
             
-            <Outlet></Outlet>
+           <div className=" px-36 ">
+           <Outlet></Outlet>
+           </div>
         </div>
     );
 };

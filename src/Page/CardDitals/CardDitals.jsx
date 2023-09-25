@@ -1,14 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import Card from "./Card/Card";
 
 
 const CardDitals = () => {
+    const [donatcion,setDonaction]=useState()
+const donations =useLoaderData()
+    const {id} = useParams()
 
-    const id = useParams()
-    console.log(id)
+useEffect(()=>{
+  const finddonation=donations?.find( (donatcion) => donatcion.id === id )
+
+  setDonaction(finddonation);
+},[id,donations])
+
+ console.log(donatcion);
     return (
         <div>
-            hello world
+           <Card  donatcion={donatcion}></Card>
         </div>
+      
     );
 };
 
